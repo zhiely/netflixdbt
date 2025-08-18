@@ -1,13 +1,20 @@
-# version: 2
+version: 2 
 
-# sources:
-#   - name: jaffle_shop
-#     database: raw  
-#     schema: jaffle_shop  
-#     tables:
-#       - name: orders
-#       - name: customers
-
-#   - name: stripe
-#     tables:
-#       - name: payments
+# documentation of the data and testing capabilities for raw data and freshness
+sources:
+  - name: netflix
+    database: MOVIELENS
+    schema: RAW
+    tables:
+     - name: r_movies
+       identifier: RAW_MOVIES
+     - name: r_ratings
+       identifier: RAW_RATINGS
+     - name: r_tags
+       identifier: RAW_TAGS
+     - name: r_genome_tags
+       identifier: RAW_GENOME_TAGS
+     - name: r_genome_scores
+       identifier: RAW_GENOME_SCORES
+     - name: r_links
+       identifier: RAW_LINKS
