@@ -7,7 +7,6 @@
 --     tag_id,
 --     relevance_score
 -- FROM {{ ref('fct_genome_scores')}}
--- WHERE relevance_score <= 3
 -- test fail
 
 SELECT 
@@ -16,4 +15,4 @@ SELECT
     relevance_score
 FROM {{ ref('fct_genome_scores')}}
 WHERE relevance_score <= 0
-test pass
+-- test pass
