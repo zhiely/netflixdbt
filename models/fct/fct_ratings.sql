@@ -18,9 +18,10 @@ SELECT
 FROM src_ratings
 WHERE rating IS NOT NULL 
 
+--below is saying if the rating time stamp from source table is bigger than the current this fact table. then update value.
 
 {% if is_incremental() %}
---below is saying if the rating time stamp from source table is bigger than the current this fact table. then update value.
-AND rating_timestamp > MAX(rating_timestamp) from {{this}}
+    AND rating_timestamp > (SELECT MAX(rating_timestamp) FROM {{this}})
 
 {% endif %}
+
